@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ../hardware-configuration.nix
       ./hardware.nix
+      ./users.nix
 
       # core systems
       ../modules/core.nix
