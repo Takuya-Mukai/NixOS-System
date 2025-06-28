@@ -22,5 +22,5 @@
     enable = true;
     trustInterfaces = ["tailscale0"];
     allowedUDPPorts = [config.services.tailscale.port];
-  }
+  };
 }
