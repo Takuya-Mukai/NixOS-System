@@ -16,9 +16,9 @@
     shell = pkgs.zsh; # デフォルトシェルなど
   };
 
-  # ここでは taku ユーザーに Home Manager を使うことだけを伝える
+  # ここでは user ユーザーに Home Manager を使うことだけを伝える
   # 具体的な設定は、ユーザー自身のFlakeで管理される
-  home-manager.users.taku = {
-    # 空にしておくか、システムワイドで共通の設定のみ記述
-  };
+  # home-manager.users.user = {
+  #   # 空にしておくか、システムワイドで共通の設定のみ記述
+  # };
 }
