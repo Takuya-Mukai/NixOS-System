@@ -15,7 +15,7 @@
   outputs = { self, ...}@inputs: {
   # outputs = inputs: {
     nixosConfigurations = {
-      m75q = nixpkgs.lib.nixosSystem {
+      m75q = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./m75q/configuration.nix
@@ -24,7 +24,7 @@
           inherit inputs;
         };
       };
-      vm = nixpkgs.lib.nixosSystem {
+      vm = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./vm/configuration.nix
