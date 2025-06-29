@@ -40,6 +40,7 @@
   environment.systemPackages = with pkgs; [
     usbutils
     tree
+    ripgrep
   ];
 
   # This value determines the NixOS release from which the default
