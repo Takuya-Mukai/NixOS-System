@@ -11,7 +11,9 @@
       viAlias = true;
       vimAlias = true;
     };
-    adb.enable = true
+    adb.enable = true;
+    tmux.enable = true;
+    bat.enable = true;
   };
 
 }

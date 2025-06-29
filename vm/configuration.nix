@@ -16,6 +16,8 @@
       ../modules/fonts.nix
       ../modules/programs.nix
       ../modules/locale.nix
+      ../modules/services.nix
+      ../modules/virtualisation.nix
 
       inputs.nixos-hardware.nixosModules.common-cpu-amd
       inputs.nixos-hardware.nixosModules.common-pc-ssd
