@@ -11,4 +11,7 @@
   hardware.cpu.amd.updateMicrocode = true;
   hardware.bluetooth.enable = true;
   networking.hostName = "m75q";
+
+  # setting for clipboard
+  services.spice-vdagentd.enable = true;
 }
