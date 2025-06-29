@@ -15,5 +15,4 @@
     tmux.enable = true;
     bat.enable = true;
   };
-
 }
