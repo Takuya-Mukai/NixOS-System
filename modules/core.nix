@@ -37,6 +37,10 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  environment.systemPackages = with pkgs; [
+    usbutils
+    tree
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
