@@ -14,5 +14,10 @@
     adb.enable = true;
     tmux.enable = true;
     bat.enable = true;
+    weylus = {
+      enable = true;
+      users = [ user ];
+      openFirewall = true;
+    };
   };
 }
