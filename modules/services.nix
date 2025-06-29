@@ -2,7 +2,7 @@
 {
   services = {
     blueman.enable = true;
-    services.polkit-gnome.enable = true;
+    polkit-gnome.enable = true;
     tailscale.enable = true;
   };
   networking.firewall = {
