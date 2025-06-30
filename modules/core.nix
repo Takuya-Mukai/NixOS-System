@@ -40,6 +40,9 @@
       xdg-desktop-portal-hyprland
     ];
     config = {
+      common = {
+        default = "wlr";
+      };
       gnome = {
         default = ["gtk"];
       };
