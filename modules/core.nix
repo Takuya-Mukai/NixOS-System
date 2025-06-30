@@ -31,6 +31,32 @@
   services.xserver.desktopManager.gnome.enable = true;
   security.polkit.enable = true;
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      "xdg-desktop-portal-gtk"
+      "xdg-desktop-portal-kde"
+      "xdg-desktop-portal-wlr"
+      "xdg-desktop-portal-hyprland"
+    ];
+    config = {
+      common = {
+        default = ["gtk"];
+      };
+      gnome = {
+        default = ["gtk"];
+      };
+      kde = {
+        default = ["kde"];
+      };
+      sway = {
+        default = ["wlr"];
+      };
+      hyprland = {
+        default = ["hyprland"];
+      };
+    };
+  };
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
