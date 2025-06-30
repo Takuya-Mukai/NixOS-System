@@ -16,7 +16,7 @@
     bat.enable = true;
     weylus = {
       enable = true;
-      users = [ user ];
+      users = [ "user" ];
       openFirewall = true;
     };
   };
