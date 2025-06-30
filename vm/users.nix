@@ -15,8 +15,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users = {
-      user = { home.stateVersion = "25.05"};
-    };
+
+    users.user = { home.stateVersion = "25.05"};
   };
 }
