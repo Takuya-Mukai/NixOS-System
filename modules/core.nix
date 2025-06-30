@@ -34,10 +34,10 @@
   xdg.portal = {
     enable = true;
     extraPortals = [
-      "xdg-desktop-portal-gtk"
-      "xdg-desktop-portal-kde"
-      "xdg-desktop-portal-wlr"
-      "xdg-desktop-portal-hyprland"
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-kde
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-hyprland
     ];
     config = {
       common = {
