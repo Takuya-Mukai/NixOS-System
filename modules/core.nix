@@ -49,9 +49,6 @@
       kde = {
         default = ["kde"];
       };
-      sway = {
-        default = ["wlr"];
-      };
       hyprland = {
         default = ["hyprland"];
       };
