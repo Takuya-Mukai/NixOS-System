@@ -9,7 +9,7 @@
     };
     # driver for hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    # xremap.url = "github:xremap/nix-flake";
+    xremap.url = "github:xremap/nix-flake";
   };
 
   outputs = { self, ...}@inputs: {
