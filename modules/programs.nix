@@ -19,5 +19,9 @@
       users = [ "user" ];
       openFirewall = true;
     };
+    sway = {
+      enable = true;
+      xwayland.enable = true;
+    };
   };
 }
