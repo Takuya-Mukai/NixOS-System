@@ -2,12 +2,6 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # Home ManagerをNixOSモジュールとして有効化
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-
   # ユーザーの定義
   users.users.user = {
     isNormalUser = true;
@@ -18,7 +12,11 @@
 
   # ここでは user ユーザーに Home Manager を使うことだけを伝える
   # 具体的な設定は、ユーザー自身のFlakeで管理される
-  # home-manager.users.user = {
-  #   # 空にしておくか、システムワイドで共通の設定のみ記述
-  # };
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = {
+      user = { home.stateVersion = "25.05"};
+    };
+  };
 }

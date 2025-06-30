@@ -19,6 +19,7 @@
         system = "x86_64-linux";
         modules = [
           ./m75q/configuration.nix
+          inputs.home-manager.nixosModules.home-manager
         ];
         specialArgs = {
           inherit inputs;
@@ -28,6 +29,7 @@
         system = "x86_64-linux";
         modules = [
           ./vm/configuration.nix
+          inputs.home-manager.nixosModules.home-manager
         ];
         specialArgs = {
           inherit inputs;
