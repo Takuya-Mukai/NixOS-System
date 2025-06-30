@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, inputs, ...}:
 {
   nix = {
     settings = {
@@ -44,6 +44,7 @@
     usbutils
     tree
     ripgrep
+    inputs.home-manager.packages.${pkgs.system}.default
   ];
 
   # This value determines the NixOS release from which the default
