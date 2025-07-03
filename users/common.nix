@@ -54,7 +54,6 @@
   # Zshの設定 (両OS共通)
     zsh = {
       enable = true;
-      viMode = true; # bindkey -v
       history = {
         size = 1000;
         path = "${config.xdg.dataHome}/zsh/history";
@@ -120,6 +119,7 @@
         }
 
         # history-substring-searchのキーバインド
+        bindkey -v
         bindkey -M vicmd 'k' history-substring-search-up
         bindkey -M vicmd 'j' history-substring-search-down
       '';
