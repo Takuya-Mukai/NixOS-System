@@ -34,16 +34,16 @@
   outputs = { self, ...}@inputs: {
   # outputs = inputs: {
     nixosConfigurations = {
-      m75q = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./m75q/configuration.nix
-          inputs.home-manager.nixosModules.home-manager
-        ];
-        specialArgs = {
-          inherit inputs;
-        };
-      };
+      # m75q = inputs.nixpkgs.lib.nixosSystem {
+      #   system = "x86_64-linux";
+      #   modules = [
+      #     ./m75q/configuration.nix
+      #     inputs.home-manager.nixosModules.home-manager
+      #   ];
+      #   specialArgs = {
+      #     inherit inputs;
+      #   };
+      # };
       vm = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
