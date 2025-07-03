@@ -23,7 +23,7 @@
     nextcloud-client
     showmethekey
     cheese
-    network-manager-applet
+    networkmanagerapplet
     mission-center
     kdePackages.kalgebra
     ellyfin-mpv-shim
