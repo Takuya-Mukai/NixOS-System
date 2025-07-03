@@ -10,7 +10,7 @@
   # Use latest kernel.
   hardware.cpu.amd.updateMicrocode = true;
   hardware.bluetooth.enable = true;
-  networking.hostName = "m75q";
+  networking.hostName = "vm";
 
   # setting for clipboard
   services.spice-vdagentd.enable = true;
