@@ -54,6 +54,8 @@
   # Zshの設定 (両OS共通)
     zsh = {
       enable = true;
+      viMode = true; # bindkey -v
+      enable = true;
       history = {
         size = 1000;
         path = "${config.xdg.dataHome}/zsh/history";
@@ -140,11 +142,4 @@
     "$HOME/.local/bin"
     "$HOME/.cargo/bin"
   ];
-
-  programs.zsh = {
-    enable = true;
-    viMode = true; # bindkey -v
-
-    # .zsh_historyの設定
-  };
 }
