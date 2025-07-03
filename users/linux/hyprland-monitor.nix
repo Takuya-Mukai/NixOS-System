@@ -1,5 +1,5 @@
 {
-  programs.hyprland.settings = {
+  wayland.windowManager.hyprland.settings = {
     # ワークスペースとモニターの割り当て
     workspace = [
       "1, monitor:DP-2"
