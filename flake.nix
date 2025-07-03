@@ -10,6 +10,25 @@
     # driver for hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     xremap.url = "github:xremap/nix-flake";
+
+    # settings for hyprland
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    Hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      # Hyprspace uses latest Hyprland. We declare this to keep them in sync.
+      inputs.hyprland.follows = "hyprland";
+    };
+    astal.url = "github:aylur/astal";
+    ags.url = "github:aylur/ags";
   };
 
   outputs = { self, ...}@inputs: {
