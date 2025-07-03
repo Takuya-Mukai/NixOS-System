@@ -27,7 +27,7 @@
     mission-center
     kdePackages.kalgebra
     jellyfin-mpv-shim
-    thunar
+    xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
   ];
