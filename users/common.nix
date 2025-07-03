@@ -3,6 +3,7 @@
 {
   # 両方のOSで使うパッケージ
   home.packages = with pkgs; [
+    pure-prompt
     tree
     tesseract
     # tesseract.data.eng
@@ -96,8 +97,6 @@
       # その他のカスタム設定
       initContent = ''
         # compinstallによる設定 (多くはデフォルトですが明示的に記述)
-        # settings for pure
-        fpath=(${pkgs.zsh-pure}/share/zsh/site-functions $fpath)
         autoload -Uz compinit && compinit
         zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]} r:|[._-]=** r:|=**' 'l:|=* r:|=*'
         zstyle ':completion:*' menu select=1
