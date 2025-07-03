@@ -20,7 +20,6 @@
       ../modules/virtualisation.nix
       ../modules/keyboard.nix
       ../modules/steam.nix
-      ../modules/hyprland.nix
 
       inputs.nixos-hardware.nixosModules.common-cpu-amd
       inputs.nixos-hardware.nixosModules.common-pc-ssd
