@@ -8,7 +8,7 @@
     spotify
     webcord
     slack
-    rustdesk
+    # rustdesk
     freetube
     bitwarden-cli
     calibre
