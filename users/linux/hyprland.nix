@@ -29,16 +29,16 @@
       # 自動起動
       exec-once = [
         "hyprpaper"
-        ${../modules/config/hypr/scripts/desktop-portal.sh}
+        "${../modules/config/hypr/scripts/desktop-portal.sh}"
         "udiskie"
         "fcitx5"
         "copyq"
         "workstyle &> /tmp/workstyle.log"
         "systemctl --user start hyprpolkitagent"
-        ${../modules/config/hypr/scripts/optimize4ExitNode.sh}
+        "${../modules/config/hypr/scripts/optimize4ExitNode.sh}"
         "nm-applet --sm-disable &"
         "nextcloud --background"
-        ${../modules/config/hypr/scripts/start.sh}
+        "${../modules/config/hypr/scripts/start.sh}"
         # NOTE: プラグインは`programs.hyprland.plugins`で指定するため、以下の行は不要です。
         # "hyprctl plugin load \"$HYPR_PLUGIN_DIR/lib/libhyprfocus.so\""
       ];
