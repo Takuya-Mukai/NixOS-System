@@ -13,6 +13,9 @@
     useUserPackages = true;
     users.user = {
       home.stateVersion = "25.05";
+      imports = [
+        /home/user/dotfiles/home.nix
+      ];
     };
   };
 }
