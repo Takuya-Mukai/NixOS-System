@@ -23,5 +23,12 @@
       enable = true;
       xwayland.enable = true;
     };
+    hyprland = {
+      enable = true;
+      portalPackages = true;
+      xwayland.enable = true;
+    };
+    hyprlock.enable = true;
+    hypridle.enable = true;
   };
 }
