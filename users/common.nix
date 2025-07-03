@@ -55,7 +55,6 @@
     zsh = {
       enable = true;
       viMode = true; # bindkey -v
-      enable = true;
       history = {
         size = 1000;
         path = "${config.xdg.dataHome}/zsh/history";
