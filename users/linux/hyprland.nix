@@ -11,8 +11,9 @@
     package = null;
     portalPackage = null;
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprfocus
-      inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprfocus
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     settings = {
       # 変数定義
@@ -211,7 +212,7 @@
         "$mainMod, mouse_up, workspace, e-1"
         "$mainMod SHIFT, T, exec, ${../modules/config/hypr/scripts/translate.sh}"
         "$mainMod SHIFT, W, exec, ${../modules/config/hypr/scripts/wiki.sh}"
-        "$mainMod, E, overview:toggle"
+        # "$mainMod, E, overview:toggle"
       ];
 
       bindm = [
