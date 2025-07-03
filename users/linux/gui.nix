@@ -27,18 +27,13 @@
     mission-center
     kdePackages.kalgebra
     ellyfin-mpv-shim
+    thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-media-tags-plugin
   ];
   # Enable the GUI applications to run in the home-manager environment
   xdg.enable = true;
   # Optional: Set up a desktop entry for Obsidian
-  programs = {
-    chromium.enable = true;
-    thunar.enable = true;
-    thunar.plugins = with pkgs; [
-      xfce.thunar-archive-plugin
-      xfce.thunar-media-tags-plugin
-    ];
-    weylus.enable = true;
-  };
+  programs.chromium.enable = true;
 
 }
