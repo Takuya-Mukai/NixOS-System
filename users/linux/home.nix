@@ -9,6 +9,7 @@
     ./qt/default.nix
     ./wlogout/default.nix
     ./wm.nix
+    ./gui.nix
     ./hyprland.nix
     ./hyprpanel.nix
     ./hypridle.nix
