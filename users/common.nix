@@ -94,7 +94,7 @@
       ];
 
       # その他のカスタム設定
-      initExtra = ''
+      initContent = ''
         # compinstallによる設定 (多くはデフォルトですが明示的に記述)
         autoload -Uz compinit && compinit
         zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]} r:|[._-]=** r:|=**' 'l:|=* r:|=*'
