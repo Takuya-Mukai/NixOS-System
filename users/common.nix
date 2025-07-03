@@ -132,7 +132,6 @@
     TERMINAL = "foot";       # footは別途インストールが必要
     XMODIFIERS = "@im=fcitx";
     QT_IM_MODULE = "fcitx";
-    QT_QPA_PLATFORMTHEME = "qt6ct";
     DefaultIMModule = "fcitx";
   };
 
