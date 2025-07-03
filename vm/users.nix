@@ -16,6 +16,7 @@
       imports = [
         ../users/linux/home.nix
       ];
+      home-manager.extraSpecialArgs = { inherit inputs; };
     };
   };
 }
