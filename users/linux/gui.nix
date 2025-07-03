@@ -16,7 +16,7 @@
     mpv
     zathura
     qalculate-gtk
-    bottle
+    bottles
     ffmpegthumbnailer
     android-file-transfer
     isoimagewriter
