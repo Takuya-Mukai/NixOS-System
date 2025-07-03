@@ -77,7 +77,7 @@
         # Pureテーマ
         {
           name = "pure";
-          src = pkgs.zsh-pure;
+          src = pkgs.pure-prompt;
           file = "share/zsh/site-functions/prompt_pure_setup";
         }
         # Oh My Zsh の git プラグイン
