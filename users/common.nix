@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   # 両方のOSで使うパッケージ
@@ -73,14 +73,4 @@
     force = true;
     recursive = true;
   };
-  # --- アプリケーションの設定ファイルを配置 ---
-  # 例: Neovimの設定
-  # xdg.configFile."nvim".source = ./../config/nvim; # config/nvim ディレクトリを ~/.config/nvim に配置
-
-  # --- 自作スクリプトの配置 ---
-  # 例: hello.sh を ~/.local/bin/hello として配置
-  # home.file.".local/bin/hello" = {
-  #   source = ./../scripts/hello.sh;
-  #   executable = true; # 実行権限を付与
-  # };
 }
