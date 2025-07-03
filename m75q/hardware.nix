@@ -5,7 +5,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    extraModulesPackages = [ config.boot.kernelPackages.r8168 ];
+    extraModulePackages = [ config.boot.kernelPackages.r8168 ];
     blacklistedKernelModules = [ "r8169" ];
   };
 
