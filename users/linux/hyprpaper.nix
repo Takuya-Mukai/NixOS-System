@@ -7,7 +7,7 @@
 
       # 事前に読み込む壁紙
       preload = [
-        ../modules/config/hypr/backgrounds/Small-memory-sunrise.jpg
+        "${../modules/config/hypr/backgrounds/Small-memory-sunrise.jpg}"
       ];
 
       # モニターに壁紙を割り当て
