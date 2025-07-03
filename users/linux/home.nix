@@ -15,6 +15,8 @@
     ./hyprlock.nix
     ./qt/default.nix
     ./wlogout/default.nix
+    ./hyprpaper.nix
+    ./hyprland-monitor.nix
     # ./sway.nix
     # ./waybar.nix
   ];
