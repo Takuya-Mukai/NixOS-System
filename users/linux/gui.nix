@@ -26,7 +26,7 @@
     networkmanagerapplet
     mission-center
     kdePackages.kalgebra
-    ellyfin-mpv-shim
+    jellyfin-mpv-shim
     thunar
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
