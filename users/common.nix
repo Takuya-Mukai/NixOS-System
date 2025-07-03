@@ -54,14 +54,11 @@
   # Zshの設定 (両OS共通)
     zsh = {
       enable = true;
-      shellAliases = { ll = "ls -l"; };
-      # ...
       history = {
         size = 1000;
         path = "${config.xdg.dataHome}/zsh/history";
         save = 1000;
       };
-
       # エイリアス
       shellAliases = {
         grep = "grep --color=auto";
