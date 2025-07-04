@@ -35,8 +35,8 @@
       # 1. 管理したいホスト名と、それぞれが使う設定ファイルのパスを定義
       hosts = {
         m75q = ./pc/m75q/configuration.nix;
-        vm = ./vm/configuration.nix;
-        mini = ./mini/configuration.nix;
+        vm = ./pc/vm/configuration.nix;
+        mini = ./pc/mini/configuration.nix;
       };
 
       # 2. nixosSystemを生成するための共通のロジックを関数として定義
