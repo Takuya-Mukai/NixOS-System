@@ -69,7 +69,7 @@
       menus.clock.time.hideSeconds = false;
       bar.clock.format = "%y/%m/%d  %H:%M";
       bar.media.show_active_only = true;
-      bar.notifications.show_total = false;
+      bar.notifications.show_total = true;
       theme.bar.buttons.modules.ram.enableBorder = false;
       bar.launcher.autoDetectIcon = true;
       bar.battery.hideLabelWhenFull = true;
