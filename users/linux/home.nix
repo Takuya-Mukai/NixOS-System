@@ -3,22 +3,13 @@
 
 {
   imports = [
-    ../common.nix
+    ../modules/common.nix
+    ../modules/gui.nix
     ../modules/localization/fcitx5.nix
-    ./gtk.nix
-    ./qt/default.nix
-    ./wlogout/default.nix
-    ./wm.nix
-    ./gui.nix
-    ./cursor.nix
-    ./hyprland.nix
-    ./hyprpanel.nix
-    ./hypridle.nix
-    ./hyprlock.nix
-    ./qt/default.nix
-    ./wlogout/default.nix
-    ./hyprpaper.nix
-    ./hyprland-monitor.nix
+    ../modules/theme/default.nix
+    ../modules/wayland/core.nix
+    ../modules/wayland/wlogout/default.nix
+    ../modules/wayland/hypr/default.nix
     # ./sway.nix
     # ./waybar.nix
   ];
