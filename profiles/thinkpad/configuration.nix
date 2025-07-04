@@ -1,0 +1,26 @@
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, inputs, pkgs, ... }:
+
+{
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ./users.nix
+      ./hardware.nix
+
+      # core systems
+      ../../system/core.nix
+      ../../system/fonts.nix
+      ../../system/programs.nix
+      ../../system/locale.nix
+      ../../system/services.nix
+      ../../system/virtualisation.nix
+      ../../system/keyboard.nix
+      ../../system/steam.nix
+      inputs.nixos-hardware.nixosModules.common-cpu-amd
+      inputs.nixos-hardware.nixosModules.common-pc-ssd
+    ];
+}

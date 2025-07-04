@@ -78,6 +78,16 @@
           inherit inputs;
         };
       };
+      thinkpad = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./profiles/thinkpad/configuration.nix
+          inputs.home-manager.nixosModules.home-manager
+        ];
+        specialArgs = {
+          inherit inputs;
+        };
+      };
       mini = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
