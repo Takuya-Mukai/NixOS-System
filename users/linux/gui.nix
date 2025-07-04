@@ -35,7 +35,7 @@
     (pkgs.makeDesktopItem {
       name = "Messenger";
       desktopName = "Messenger";
-      exec = "${pkgs.chromium/bin/chromium} --app=https://messenger.com";
+      exec = "${pkgs.chromium}/bin/chromium --app=https://messenger.com";
       icon = "fbmessenger";
       categories = [ "Network" "InstantMessaging" ];
     })
