@@ -7,20 +7,19 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      # ./hardware-configuration.nix
-      ./hardware.nix
+      ./hardware-configuration.nix
       ./users.nix
+      ./hardware.nix
 
       # core systems
-      ../modules/core.nix
-      ../modules/locale.nix
-      ../modules/fonts.nix
-      ../modules/programs.nix
-      ../modules/services.nix
-      ../modules/virtualisation.nix
-      ../modules/keyboard.nix
-      ../modules/steam.nix
-
+      ../../system/core.nix
+      ../../system/fonts.nix
+      ../../system/programs.nix
+      ../../system/locale.nix
+      ../../system/services.nix
+      ../../system/virtualisation.nix
+      ../../system/keyboard.nix
+      ../../system/steam.nix
       inputs.nixos-hardware.nixosModules.common-cpu-amd
       inputs.nixos-hardware.nixosModules.common-pc-ssd
     ];
