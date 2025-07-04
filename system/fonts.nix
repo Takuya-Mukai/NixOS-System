@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       ibm-plex
       moralerspace-hwnf
       nerd-fonts.fira-code
