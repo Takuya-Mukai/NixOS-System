@@ -30,13 +30,15 @@
     astal.url = "github:aylur/astal";
     ags.url = "github:aylur/ags";
   };
+
+
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       # 1. 管理したいホスト名と、それぞれが使う設定ファイルのパスを定義
       hosts = {
-        m75q = ./pc/m75q/configuration.nix;
-        vm = ./pc/vm/configuration.nix;
-        mini = ./pc/mini/configuration.nix;
+        m75q = ./profiles/m75q/configuration.nix;
+        vm = ./profiles/vm/configuration.nix;
+        mini = ./profiles/mini/configuration.nix;
       };
 
       # 2. nixosSystemを生成するための共通のロジックを関数として定義
