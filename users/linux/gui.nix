@@ -35,7 +35,7 @@
       name = "Messenger";
       desktopName = "Messenger";
       exec = "${pkgs.chromium/bin/chromium} --app=https://messenger.com";
-      icon = "${pkgs.chromium}/share/icons/hicolor/48x48/apps/chromium.png";
+      icon = "fbmessenger";
       categories = [ "Network" "InstantMessaging" ];
     })
   ];
