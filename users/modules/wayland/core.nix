@@ -20,11 +20,12 @@
     foot
   ];
   services.copyq.enable = true;
-  home.file.".config/foot.ini" = {
-    source = ../config/foot/foot.ini;
+  home.file.".config/foot" = {
+    source = ../config/foot;
+    recursive = true;
   };
   home.file."sherlock" = {
-    source = ../modules/config/sherlock;
+    source = ../config/sherlock;
     recursive = true;
   };
 }

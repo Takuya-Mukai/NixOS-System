@@ -136,7 +136,7 @@
     DefaultIMModule = "fcitx";
   };
   home.file.".config/nvim" = {
-    source = ./modules/config/nvim;
+    source = ./config/nvim;
     recursive = true;
   };
 
