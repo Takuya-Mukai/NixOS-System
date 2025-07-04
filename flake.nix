@@ -61,7 +61,7 @@
       m75q = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./pc/m75q/configuration.nix
+          ./profiles/m75q/configuration.nix
           inputs.home-manager.nixosModules.home-manager
         ];
         specialArgs = {
@@ -71,7 +71,7 @@
       vm = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./vm/configuration.nix
+          ./profiles/vm/configuration.nix
           inputs.home-manager.nixosModules.home-manager
         ];
         specialArgs = {
@@ -81,7 +81,7 @@
       mini = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./mini/configuration.nix
+          ./profiles/mini/configuration.nix
           inputs.home-manager.nixosModules.home-manager
         ];
         specialArgs = {
