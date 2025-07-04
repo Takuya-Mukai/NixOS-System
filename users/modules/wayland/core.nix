@@ -21,7 +21,7 @@
   ];
   services.copyq.enable = true;
   home.file.".config/foot.ini" = {
-    source = ../modules/config/foot/foot.ini;
+    source = ../config/foot/foot.ini;
   };
   home.file."sherlock" = {
     source = ../modules/config/sherlock;
