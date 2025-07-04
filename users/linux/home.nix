@@ -10,6 +10,7 @@
     ./wlogout/default.nix
     ./wm.nix
     ./gui.nix
+    ./cursor.nix
     ./hyprland.nix
     ./hyprpanel.nix
     ./hypridle.nix
