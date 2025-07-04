@@ -30,30 +30,63 @@
     astal.url = "github:aylur/astal";
     ags.url = "github:aylur/ags";
   };
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let
+      # 1. 管理したいホスト名と、それぞれが使う設定ファイルのパスを定義
+      hosts = {
+        m75q = ./pc/m75q/configuration.nix;
+        vm = ./vm/configuration.nix;
+        mini = ./mini/configuration.nix;
+      };
 
-  outputs = { self, ...}@inputs: {
-  # outputs = inputs: {
-    nixosConfigurations = {
-      m75q = inputs.nixpkgs.lib.nixosSystem {
+      # 2. nixosSystemを生成するための共通のロジックを関数として定義
+      mkSystem = configPath: nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./m75q/configuration.nix
-          inputs.home-manager.nixosModules.home-manager
+          configPath  # <- 各ホスト固有の設定ファイル
+          home-manager.nixosModules.home-manager # <- 共通のモジュール
         ];
-        specialArgs = {
-          inherit inputs;
-        };
+        specialArgs = { inherit inputs; }; # <- 共通の引数
       };
-      vm = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./vm/configuration.nix
-          inputs.home-manager.nixosModules.home-manager
-        ];
-        specialArgs = {
-          inherit inputs;
-        };
-      };
+
+    in
+    {
+      # 3. `hosts`の各要素に対して`mkSystem`関数を適用し、nixosConfigurationsを生成
+      nixosConfigurations = nixpkgs.lib.mapAttrs (hostname: configPath: mkSystem configPath) hosts;
     };
-  };
+  # outputs = { self, ...}@inputs: {
+  # # outputs = inputs: {
+  #   nixosConfigurations = {
+  #     m75q = inputs.nixpkgs.lib.nixosSystem {
+  #       system = "x86_64-linux";
+  #       modules = [
+  #         ./pc/m75q/configuration.nix
+  #         inputs.home-manager.nixosModules.home-manager
+  #       ];
+  #       specialArgs = {
+  #         inherit inputs;
+  #       };
+  #     };
+  #     vm = inputs.nixpkgs.lib.nixosSystem {
+  #       system = "x86_64-linux";
+  #       modules = [
+  #         ./vm/configuration.nix
+  #         inputs.home-manager.nixosModules.home-manager
+  #       ];
+  #       specialArgs = {
+  #         inherit inputs;
+  #       };
+  #     };
+  #     mini = inputs.nixpkgs.lib.nixosSystem {
+  #       system = "x86_64-linux";
+  #       modules = [
+  #         ./mini/configuration.nix
+  #         inputs.home-manager.nixosModules.home-manager
+  #       ];
+  #       specialArgs = {
+  #         inherit inputs;
+  #       };
+  #     };
+  #   };
+  # };
 }
