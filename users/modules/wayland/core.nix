@@ -20,10 +20,10 @@
     foot
   ];
   services.copyq.enable = true;
-  xdg.configFile."foot/foot.ini" = {
+  home.file.".config/foot.ini" = {
     source = ../modules/config/foot/foot.ini;
   };
-  xdg.configFile."sherlock" = {
+  home.file."sherlock" = {
     source = ../modules/config/sherlock;
     recursive = true;
   };

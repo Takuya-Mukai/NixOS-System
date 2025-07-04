@@ -128,13 +128,17 @@
     neovim.enable = true; # nvimパッケージもインストールされる
   };
   home.sessionVariables = {
-    BROWSER = "zen-browser"; # zen-browserは別途インストールが必要
+    BROWSER = "zen"; # zen-browserは別途インストールが必要
     EDITOR = "nvim";
     TERMINAL = "foot";       # footは別途インストールが必要
     XMODIFIERS = "@im=fcitx";
     QT_IM_MODULE = "fcitx";
     DefaultIMModule = "fcitx";
   };
+  home.file.".config/nvim" = {
+    source = ./modules/config/nvim;
+    recursive = true;
+  }
 
   # PATHの追加
   home.sessionPath = [
