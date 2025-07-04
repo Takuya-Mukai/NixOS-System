@@ -6,5 +6,5 @@
     ./hyprpanel.nix
     ./hyprpaper.nix
     ./hyprland-monitor.nix
-  ]
+  ];
 }
