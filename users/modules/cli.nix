@@ -138,7 +138,7 @@
   home.file.".config/nvim" = {
     source = ./modules/config/nvim;
     recursive = true;
-  }
+  };
 
   # PATHの追加
   home.sessionPath = [
