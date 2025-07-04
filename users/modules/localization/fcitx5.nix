@@ -23,9 +23,7 @@
     ".local/share/fcitx5/skk/dictionary_list".text = with pkgs; ''
       file=${libskk}/share/skk/SKK-JISYO.L,mode=readonly,type=file
     '';
+    ".config/fcitx5/config".source = ./fcitx5/config;
+    ".config/fcitx5/conf/skk.conf".source = ./fcitx5/conf/skk.conf;
   };
-  xdxdg.configFile."fcitx5" = {
-    source = ./fcitx5;
-    recursive = true;
-  }
 }

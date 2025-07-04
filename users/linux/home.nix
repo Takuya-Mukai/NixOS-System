@@ -4,7 +4,7 @@
 {
   imports = [
     ../common.nix
-    ./fcitx5.nix
+    ../modules/localization/fcitx5.nix
     ./gtk.nix
     ./qt/default.nix
     ./wlogout/default.nix
