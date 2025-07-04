@@ -30,10 +30,18 @@
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
+
+    (pkgs.makeDesktopItem {
+      name = "Messenger";
+      desktopName = "Messenger";
+      exec = "${pkgs.chromium/bin/chromium}" --app=https://messenger.com";
+      icon = "${pkgs.chromium}/share/icons/hicolor/48x48/apps/chromium.png";
+      desktopFile = "messenger.desktop";
+      categories = [ "Network" "InstantMessaging" ];
+    })
   ];
   # Enable the GUI applications to run in the home-manager environment
   xdg.enable = true;
   # Optional: Set up a desktop entry for Obsidian
   programs.chromium.enable = true;
-
 }
