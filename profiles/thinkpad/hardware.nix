@@ -10,7 +10,7 @@
   # Use latest kernel.
   hardware.cpu.amd.updateMicrocode = true;
   hardware.bluetooth.enable = true;
-  networking.hostName = "vm";
+  networking.hostName = "thinkpad";
 
   # setting for clipboard
   services.spice-vdagentd.enable = true;
