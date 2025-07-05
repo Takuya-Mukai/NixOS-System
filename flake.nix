@@ -39,6 +39,7 @@
         m75q = ./profiles/m75q/configuration.nix;
         vm = ./profiles/vm/configuration.nix;
         mini = ./profiles/mini/configuration.nix;
+        thinkpad = ./profiles/thinkpad/configuration.nix;
       };
 
       # 2. nixosSystemを生成するための共通のロジックを関数として定義
