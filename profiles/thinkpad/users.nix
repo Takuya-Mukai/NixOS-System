@@ -19,7 +19,7 @@
       home.homeDirectory = "/home/user";
       imports = [
         ../../modules/cli.nix
-        # ../../modules/gui.nix
+        ../../modules/gui.nix
         ../../modules/localization/fcitx5.nix
         ../../modules/theme/default.nix
         ../../modules/wayland/core.nix
