@@ -18,6 +18,7 @@
     nwg-drawer
     grim
     foot
+    wdisplays
   ];
   services.copyq.enable = true;
   home.file.".config/foot" = {
