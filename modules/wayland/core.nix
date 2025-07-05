@@ -4,7 +4,7 @@
 {
   home.packages = with pkgs; [
     # inputs.quickshell.packages.x86_64-linux.default
-    sherlock-launcher
+    walker
     wlvncc
     nwg-displays
     pwvucontrol
@@ -24,8 +24,8 @@
     source = ../config/foot;
     recursive = true;
   };
-  home.file."sherlock" = {
-    source = ../config/sherlock;
-    recursive = true;
-  };
+  # home.file."sherlock" = {
+  #   source = ../config/sherlock;
+  #   recursive = true;
+  # };
 }

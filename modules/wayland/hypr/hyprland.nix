@@ -19,7 +19,7 @@
       # 変数定義
       "$terminal" = "foot";
       "$fileManager" = "thunar";
-      "$menu" = "sherlock";
+      "$menu" = "walker";
       "$browser" = "zen-browser";
       "$mainMod" = "SUPER";
 
