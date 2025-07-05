@@ -129,7 +129,7 @@
       enable = true; # nvimパッケージもインストールされる
       extraPackages = with pkgs; [
         # dependencies for neovim
-        make
+        gnumake
         gcc
         npm
       ];
