@@ -18,6 +18,7 @@
 
   programs = {
     bat.enable = true;
+    lazygit.enable = true;
     zoxide = {
       enable = true;
       enableZshIntegration = true;
