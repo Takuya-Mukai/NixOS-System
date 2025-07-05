@@ -131,7 +131,7 @@
         # dependencies for neovim
         gnumake
         gcc
-        npm
+        nodePackages.nodejs
       ];
     };
   };
