@@ -20,7 +20,8 @@
       ../../system/virtualisation.nix
       ../../system/keyboard.nix
       ../../system/steam.nix
-      inputs.nixos-hardware.nixosModules.common-cpu-amd
+      ../../system/tlp.nix
+      inputs.nixos-hardware.nixosModules.common-cpu-intel
       inputs.nixos-hardware.nixosModules.common-pc-ssd
     ];
 }
