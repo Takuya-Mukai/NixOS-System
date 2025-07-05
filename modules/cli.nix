@@ -125,7 +125,15 @@
         bindkey -M vicmd 'j' history-substring-search-down
       '';
       };
-    neovim.enable = true; # nvimパッケージもインストールされる
+    neovim = {
+      enable = true; # nvimパッケージもインストールされる
+      extraPackages = with pkgs; [
+        # dependencies for neovim
+        make
+        gcc
+        npm
+      ];
+    };
   };
   home.sessionVariables = {
     BROWSER = "zen"; # zen-browserは別途インストールが必要
