@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
-{
+
+let
+  pluginPath = "${pkgs.vimUtils.packDir config.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start";
+in {
   programs.neovim = {
     enable = true;
     withNodeJs = true;
@@ -100,7 +103,8 @@
     ];
     extraLuaConfig = ''
       vim.loader.enable()
-      vim.g.nix_plugins_path = "${pkgs.vimUtils.packDir programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
+      --  vim.g.nix_plugins_path = "${pkgs.vimUtils.packDir programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
+      vim.g.nix_plugins_path = "${pluginPath}"
       require('config.config')
       require('config.lazy')
       require('config.scripts')
