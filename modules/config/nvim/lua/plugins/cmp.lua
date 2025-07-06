@@ -1,85 +1,45 @@
-return{
+return {
+  -- nvim-cmp 本体と、それに直接関連するソース
   {
-    -- "hrsh7th/nvim-cmp",
-    name = "nvim-cmp",
-    dir = "@nvim_cmp@",
+    "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
     config = function() require 'plugins-config.cmp.nvim-cmp' end,
     dependencies = {
-      -- "hrsh7th/cmp-nvim-lsp",
-      name = "cmp-nvim-lsp",
-      dir = "@cmp_nvim_lsp@",
-      event = { "InsertEnter", "CmdlineEnter"},
-      dependencies = {
-        {
-          -- 'L3MON4D3/LuaSnip',
-          name = "LuaSnip",
-          dir = "@luasnip@",
-          -- build = 'make install_jsregexp',
-          config = function() require 'plugins-config.cmp.luasnip' end,
-          dependencies = {
-            {
-              -- 'saadparwaiz1/cmp_luasnip'
-              name = "cmp_luasnip",
-              dir = "@cmp_luasnip@"
-            },
-            {
-              -- 'rafamadriz/friendly-snippets'
-              name = "friendly-snippets",
-              dir = "@friendly_snippets@",
-            },
-          },
-          event = "InsertEnter",
-        },
-        {
-          -- 'zbirenbaum/copilot-cmp',
-          name = "copilot-cmp",
-          dir = "@copilot_cmp@",
-          dependencies =
-          {
-            -- 'copilot.lua',
-            name = "copilot.lua",
-            dir = "@copilot_lua@",
-          },
-          config = function() require('copilot_cmp').setup() end,
-          cmd = "CS",
-          event = "InsertEnter",
-        },
-        {
-          -- 'hrsh7th/cmp-buffer',
-          name = "cmp-buffer",
-          dir = "@cmp_buffer@",
-        },
-        {
-          -- 'hrsh7th/cmp-path',
-          name = "cmp-path",
-          dir = "@cmp_path@",
-        },
-        {
-          -- 'hrsh7th/cmp-cmdline',
-          name = "cmp-cmdline",
-          dir = "@cmp_cmdline@",
-        },
-        {
-          -- 'onsails/lspkind.nvim',
-          name = "lspkind.nvim",
-          dir = "@lspkind_nvim@",
-        },
-        {
-          -- "kdheepak/cmp-latex-symbols",
-          name = "cmp-latex-symbols",
-          dir = "@cmp_latex_symbols",
-        },
-      },
-    }
+      -- nvim-cmpが依存するプラグインソースを列挙
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "saadparwaiz1/cmp_luasnip",
+      "kdheepak/cmp-latex-symbols",
+      "zbirenbaum/copilot-cmp", -- copilot用のcmpソース
+    },
+  },
+
+  -- スニペットエンジンとスニペット集
+  {
+    'L3MON4D3/LuaSnip',
+    -- build = 'make install_jsregexp', -- Nix環境ではこの行を削除
+    config = function() require 'plugins-config.cmp.luasnip' end,
+    dependencies = { 'rafamadriz/friendly-snippets' },
+    event = "InsertEnter",
+  },
+
+  -- UI/UX関連
+  {
+    "onsails/lspkind.nvim",
+    event = { "InsertEnter", "CmdlineEnter" },
+  },
+
+  -- Copilot関連
+  {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    config = function() require("plugins-config.cmp.copilot") end,
   },
   {
-    -- "zbirenbaum/copilot.lua",
-    name = "copilot.lua",
-    dir = "copilot_lua",
-    event = "InsertEnter",
-    config = function()
-      require("plugins-config.cmp.copilot")
-    end,
+    'zbirenbaum/copilot-cmp',
+    config = function() require('copilot_cmp').setup() end,
+    dependencies = { "zbirenbaum/copilot.lua" },
   },
 }
