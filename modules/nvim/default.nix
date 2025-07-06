@@ -20,17 +20,18 @@ let
   luaFiles = builtins.filter (f: lib.hasSuffix ".lua" f)
     (builtins.attrNames (builtins.readDir luaFilesDir));
 
-  # 明示的にrunCommandでファイルを生成して、絶対パスを得る
   replacedLuaFiles = builtins.listToAttrs (map (file: {
     name = ".config/nvim/lua/plugins/${file}";
     value = {
       source = pkgs.runCommand "nvim-${file}" {
         preferLocalBuild = true;
         allowSubstitutes = false;
+        nativeBuildInputs = [ pkgs.replaceVars ];
       } ''
         mkdir -p $out
-        cp ${luaFilesDir}/${file} $out/${file}
-        ${pkgs.replaceVars}/bin/replaceVars $out/${file} $out/${file} \
+        ${pkgs.replaceVars}/bin/replaceVars \
+          ${luaFilesDir}/${file} \
+          $out/${file} \
 ${builtins.concatStringsSep " \\\n" (map (k: "${k}=${pluginVars.${k}}") (builtins.attrNames pluginVars))}
       '';
     };
