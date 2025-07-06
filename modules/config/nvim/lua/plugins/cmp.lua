@@ -1,6 +1,8 @@
 return{
   {
-    "hrsh7th/nvim-cmp",
+--    "hrsh7th/nvim-cmp",
+    name = "nvim-cmp",
+    dir = "@nvim-cmp@",
     event = { "InsertEnter", "CmdlineEnter" },
     config = function() require 'plugins-config.cmp.nvim-cmp' end,
     dependencies = {
