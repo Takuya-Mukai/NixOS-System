@@ -104,7 +104,8 @@
       require('config.config')
       require('config.lazy')
       require('config.scripts')
-  '';
+    '';
+  };
   xdg.configFile."nvim/lua" = {
     source = ../config/nvim/lua;
     recursive = true;
