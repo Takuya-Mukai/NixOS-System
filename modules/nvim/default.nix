@@ -100,7 +100,7 @@
     ];
     extraLuaConfig = ''
       vim.loader.enable()
-      vim.g.nix_plugins_path = "${pkgs.vimUtils.packDir config.home-manager.users.user.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
+      vim.g.nix_plugins_path = "${pkgs.vimUtils.packDir programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
       require('config.config')
       require('config.lazy')
       require('config.scripts')
