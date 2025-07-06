@@ -12,23 +12,20 @@ let
 
   pluginVars = builtins.listToAttrs (map (p: {
     name = toVarName p;
-    value = toString (pkgs.vimPlugins.${p});
+    value = "${pkgs.vimPlugins.${p}}";
   }) pluginNames);
 
   luaFilesDir = ../config/nvim/lua/plugins;
 
-  luaFiles = builtins.filter (file: builtins.match ".*\\.lua$" file != null)
+  luaFiles = builtins.filter (f: lib.hasSuffix ".lua" f)
     (builtins.attrNames (builtins.readDir luaFilesDir));
 
   replacedLuaFiles = builtins.listToAttrs (map (file: {
     name = ".config/nvim/lua/plugins/${file}";
-    value = pkgs.runCommand file {
-    } ''
-      mkdir -p $out
-      ${pkgs.makeWrapper}/bin/replaceVars ${luaFilesDir}/${file} $out/${file} ''
-        ${builtins.concatStringsSep " \\\n" (map (k: "${k}=${pluginVars.${k}}") (builtins.attrNames pluginVars))}
-      ''
-    '';
+    value = pkgs.replaceVars {
+      src = "${luaFilesDir}/${file}";
+      replacements = pluginVars;
+    };
   }) luaFiles);
 
 in {
@@ -43,4 +40,3 @@ in {
 
   home.file = replacedLuaFiles;
 }
-
