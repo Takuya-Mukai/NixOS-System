@@ -86,11 +86,11 @@
       
       black
       pyright
+      ruff
 
-      clangd
-      codelldb
+      vscode-extensions.vadimcn.vscode-lldb
+      clang-tools
       cpplint
-      clang-format
 
       bash-language-server
       shellcheck
