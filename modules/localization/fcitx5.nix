@@ -15,19 +15,16 @@
       waylandFrontend = true;
     };
   };
+  home.sessionVariables = {
+    GTK_IM_MODULE= "fcitx";
+    QT_IM_MODULE= "fcitx";
+    XMODIFIERS= "@im=fcitx";
+    INPUT_METHOD= "fcitx";
+  };
   home.file = {
-    ".config/environment.d/99-fcitx.conf".text = ''
-      GTK_IM_MODULE=fcitx
-      QT_IM_MODULE=fcitx
-      XMODIFIERS=@im=fcitx
-      INPUT_METHOD=fcitx
-    '';
     ".local/share/fcitx5/skk/dictionary_list".text = with pkgs; ''
       file=${libskk}/share/skk/SKK-JISYO.L,mode=readonly,type=file
     '';
-    ".config/fcitx5" = {
-      source = ../config/fcitx5;
-      recursive = true;
-    };
   };
+  xdg.configFile."fcitx5".source = ../config/fcitx5;
 }
