@@ -8,7 +8,6 @@
 
     # デバッグのため、letやmapを使わず、プラグインを直接リストアップします
     plugins = with pkgs.vimPlugins; [
-      lazy-nvim
       # cmp.lua
       nvim-cmp
       cmp-nvim-lsp
@@ -75,6 +74,7 @@
     ];
 
     extraPackages = with pkgs; [
+      git
       gnumake
       gcc
       ripgrep

@@ -7,14 +7,26 @@ local function find_plugin_base_path(plugin_name)
   return nil
 end
 
-local lazy_plugin_path = find_plugin_base_path("lazy.nvim")
+local lazy_plugin_path = find_plugin_base_path("lualine.nvim")
 
 -- fallback 対応（なくても動くように）
 if not lazy_plugin_path then
-  vim.notify("lazy.nvim のパスが見つかりませんでした", vim.log.levels.WARN)
+  vim.notify("lualine.nvim のパスが見つかりませんでした", vim.log.levels.WARN)
   lazy_plugin_path = "" -- fallback to empty
 end
 
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 -- lazy.nvim 初期化
 require("lazy").setup({
   dev = {
