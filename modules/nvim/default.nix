@@ -16,6 +16,7 @@
   
   in
 
+  {
   programs.neovim = {
     enable = true; # nvimパッケージもインストールされる
     extraPackages = with pkgs; [
@@ -31,5 +32,5 @@
     } // buildSubstArgs pkgs pluginNames);
     recursive = true;
   };
-
+  }
 }
