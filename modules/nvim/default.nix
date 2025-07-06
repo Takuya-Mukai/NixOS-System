@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   pluginNames = [
@@ -10,20 +10,25 @@ let
 
   toVarName = str: builtins.replaceStrings ["-"] ["_"] str;
 
-  pluginVars = builtins.listToAttrs (builtins.map (p: {
+  pluginVars = builtins.listToAttrs (map (p: {
     name = toVarName p;
-    value = pkgs.vimPlugins.${p};
+    value = toString (pkgs.vimPlugins.${p});
   }) pluginNames);
 
+  luaFilesDir = ../config/nvim/lua/plugins;
+
   luaFiles = builtins.filter (file: builtins.match ".*\\.lua$" file != null)
-    (builtins.attrNames (builtins.readDir ../config/nvim/lua/plugins));
+    (builtins.attrNames (builtins.readDir luaFilesDir));
 
   replacedLuaFiles = builtins.listToAttrs (map (file: {
-    name = "../config/nvim/lua/plugins/${file}";
-    value = pkgs.substituteAll ({
-      src = ../config/nvim/lua/plugins/${file};
-      name = file;
-    } // pluginVars);
+    name = ".config/nvim/lua/plugins/${file}";
+    value = pkgs.runCommand file {
+    } ''
+      mkdir -p $out
+      ${pkgs.makeWrapper}/bin/replaceVars ${luaFilesDir}/${file} $out/${file} ''
+        ${builtins.concatStringsSep " \\\n" (map (k: "${k}=${pluginVars.${k}}") (builtins.attrNames pluginVars))}
+      ''
+    '';
   }) luaFiles);
 
 in {
@@ -32,8 +37,10 @@ in {
     extraPackages = with pkgs; [
       gnumake
       gcc
-      nodePackages.nodejs
+      nodejs
     ] ++ (map (p: pkgs.vimPlugins.${p}) pluginNames);
   };
+
   home.file = replacedLuaFiles;
 }
+
