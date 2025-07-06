@@ -21,7 +21,7 @@ let
   replacedLuaFiles = builtins.listToAttrs (map (file: {
     name = "../config/nvim/lua/plugins/${file}";
     value = pkgs.substituteAll ({
-      src = ./config/nvim/lua/plugins/${file};
+      src = ../config/nvim/lua/plugins/${file};
       name = file;
     } // pluginVars);
   }) luaFiles);
