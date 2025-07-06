@@ -8,6 +8,7 @@
       addons = with pkgs; [
         fcitx5-skk
         kdePackages.fcitx5-qt
+	libsForQt5.fcitx5-qt
         libskk
         fcitx5-tokyonight
       ];
@@ -15,10 +16,11 @@
     };
   };
   home.file = {
-    ".xprofile".text = ''
-      export GTK_IM_MODULE=fcitx
-      export QT_IM_MODULE=fcitx
-      export XMODIFIERS=@im=fcitx
+    ".config/environment.d/99-fcitx.conf".text = ''
+      GTK_IM_MODULE=fcitx
+      QT_IM_MODULE=fcitx
+      XMODIFIERS=@im=fcitx
+      INPUT_METHOD=fcitx
     '';
     ".local/share/fcitx5/skk/dictionary_list".text = with pkgs; ''
       file=${libskk}/share/skk/SKK-JISYO.L,mode=readonly,type=file
