@@ -69,29 +69,15 @@
       typst-preview-nvim
       
       # treesitter
-      nvim-treesitter-parsers.vimdoc
-      nvim-treesitter-parsers.typst
-      nvim-treesitter-parsers.rust
-      nvim-treesitter-parsers.python
-      nvim-treesitter-parsers.nix
-      nvim-treesitter-parsers.markdown-inline
-      nvim-treesitter-parsers.markdown
-      nvim-treesitter-parsers.lua
-      nvim-treesitter-parsers.latex
-      nvim-treesitter-parsers.hyprlang
-      nvim-treesitter-parsers.gitignore
-      nvim-treesitter-parsers.gitcommit
-      nvim-treesitter-parsers.gitattributes
-      nvim-treesitter-parsers.git_rebase
-      nvim-treesitter-parsers.git_config
-      nvim-treesitter-parsers.dockerfile
-      nvim-treesitter-parsers.diff
-      nvim-treesitter-parsers.desktop
-      nvim-treesitter-parsers.cpp
-      nvim-treesitter-parsers.c
-      nvim-treesitter-parsers.bibtex
-      nvim-treesitter-parsers.bash
+      nvim-treesitter.withAllGrammars
       
+    ];
+
+    extraPackages = with pkgs; [
+      gnumake
+      gcc
+      ripgrep
+      fd
       # lsp
       lua-language-server
       luajitPackages.luacheck
@@ -112,12 +98,15 @@
       nil
       nixpkgs-fmt
     ];
-
-    extraPackages = with pkgs; [
-      gnumake
-      gcc
-      ripgrep
-      fd
-    ];
+    extraLuaConfig = ''
+      vim.loader.enable()
+      vim.g.nix_plugins_path = "${pkgs.vimUtils.packDir config.home-manager.users.user.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
+      require('config.config')
+      require('config.lazy')
+      require('config.scripts')
+  };
+  xdg.configFile."nvim/lua" = {
+    source = ../config/nvim/lua;
+    recursive = true;
   };
 }
