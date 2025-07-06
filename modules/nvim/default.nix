@@ -16,7 +16,7 @@ let
   }) pluginNames);
 
   luaFiles = builtins.filter (file: builtins.match ".*\\.lua$" file != null)
-    (builtins.attrNames (builtins.readDir ./config/nvim/lua/plugins));
+    (builtins.attrNames (builtins.readDir ../config/nvim/lua/plugins));
 
   replacedLuaFiles = builtins.listToAttrs (map (file: {
     name = "../config/nvim/lua/plugins/${file}";
