@@ -23,7 +23,7 @@
       cmp-latex-symbols
 
       # color.lua
-      kangawa-nvim
+      kanagawa-nvim
       rainbow-delimiters-nvim
       nvim-treesitter
       nvim-treesitter-textobjects
