@@ -125,15 +125,6 @@
         bindkey -M vicmd 'k' history-substring-search-up
         bindkey -M vicmd 'j' history-substring-search-down
       '';
-      };
-    neovim = {
-      enable = true; # nvimパッケージもインストールされる
-      extraPackages = with pkgs; [
-        # dependencies for neovim
-        gnumake
-        gcc
-        nodePackages.nodejs
-      ];
     };
   };
   home.sessionVariables = {

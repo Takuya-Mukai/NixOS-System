@@ -43,4 +43,6 @@
   # Enable the GUI applications to run in the home-manager environment
   xdg.enable = true;
   # Optional: Set up a desktop entry for Obsidian
+  xdg.configFile."electron-flags.conf" = ./config/electron-flags.conf;
+  xdg.configFile."chromium-flags.conf" = ./config/chromium-flags.conf;
 }

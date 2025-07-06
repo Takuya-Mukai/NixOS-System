@@ -26,6 +26,7 @@
         ../../modules/wayland/wlogout/default.nix
         ../../modules/wayland/hypr/default.nix
         ../../modules/wayland/hypr/hyprland-monitor.nix
+	../../modules/nvim/default.nix
       ];
     };
   };
