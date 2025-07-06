@@ -131,13 +131,6 @@
     BROWSER = "zen"; # zen-browserは別途インストールが必要
     EDITOR = "nvim";
     TERMINAL = "foot";       # footは別途インストールが必要
-    XMODIFIERS = "@im=fcitx";
-    QT_IM_MODULE = "fcitx";
-    DefaultIMModule = "fcitx";
-  };
-  home.file.".config/nvim" = {
-    source = ./config/nvim;
-    recursive = true;
   };
 
   # PATHの追加

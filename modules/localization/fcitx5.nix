@@ -20,6 +20,7 @@
     QT_IM_MODULE= "fcitx";
     XMODIFIERS= "@im=fcitx";
     INPUT_METHOD= "fcitx";
+    DefaultIMModule = "fcitx";
   };
   home.file = {
     ".local/share/fcitx5/skk/dictionary_list".text = with pkgs; ''
