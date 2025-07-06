@@ -20,7 +20,7 @@
       "$terminal" = "foot";
       "$fileManager" = "thunar";
       "$menu" = "walker";
-      "$browser" = "zen-browser";
+      "$browser" = "zen";
       "$mainMod" = "SUPER";
 
       # モニター設定
@@ -39,6 +39,7 @@
         "${../../config/hypr/scripts/optimize4ExitNode.sh}"
         "nm-applet --sm-disable &"
         "nextcloud --background"
+	"${../../config/hypr/scripts/wayvnc_server.sh}"
         "${../../config/hypr/scripts/start.sh}"
         # NOTE: プラグインは`programs.hyprland.plugins`で指定するため、以下の行は不要です。
         # "hyprctl plugin load \"$HYPR_PLUGIN_DIR/lib/libhyprfocus.so\""
