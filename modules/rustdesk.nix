@@ -1,4 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = pkgs.rustdesk;
+  home.packages = [ pkgs.rustdesk ];
 }
+
