@@ -20,7 +20,8 @@ return{
     dependencies = {
       'nvim-tree/nvim-web-devicons', 'nvim-lua/plenary.nvim',
       {
-        'nvim-telescope/telescope-fzf-native.nvim', build = 'make'
+        'nvim-telescope/telescope-fzf-native.nvim',
+	-- build = 'make'
       },
     },
     keys = {
@@ -29,15 +30,15 @@ return{
     cmd = 'Telescope',
     config = function() require 'plugins-config.tools.telescope' end,
   },
-  {
-    'prochri/telescope-all-recent.nvim',
-    opts = {},
-    dependencies = {
-      'kkharji/sqlite.lua',
-      'nvim-telescope/telescope.nvim',
-    },
-    keys = {'<leader>f', mode = 'n'},
-  },
+  -- {
+  --   'prochri/telescope-all-recent.nvim',
+  --   opts = {},
+  --   dependencies = {
+  --     'kkharji/sqlite.lua',
+  --     'nvim-telescope/telescope.nvim',
+  --   },
+  --   keys = {'<leader>f', mode = 'n'},
+  -- },
   {
     "danielfalk/smart-open.nvim",
     branch = "0.2.x",
@@ -47,7 +48,10 @@ return{
     dependencies = {
       "kkharji/sqlite.lua",
       -- Only required if using match_algorithm fzf
-      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      { 
+	"nvim-telescope/telescope-fzf-native.nvim",
+      	-- build = "make"
+      },
     },
     keys = {'<leader>f', mode = 'n'},
   },
@@ -112,7 +116,7 @@ return{
       { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
       { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
     },
-    build = "make tiktoken", -- Only on MacOS or Linux
+    -- build = "make tiktoken", -- Only on MacOS or Linux
     opts = {
       -- See Configuration section for options
     },
@@ -139,34 +143,4 @@ return{
       })
     end,
   },
-  -- {
-  --   'VonHeikemen/fine-cmdline.nvim',
-  --   dependencies = {
-  --     {'MunifTanjim/nui.nvim'},
-  --     {'hrsh7th/nvim-cmp'},
-  --     {'hrsh7th/cmp-cmdline'},
-  --   },
-  --   config = function()
-  --     vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
-  --     require('fine-cmdline').setup({
-  --       -- ここに fine-cmdline の設定を記述
-  --       -- 例えば、デフォルトの表示方法の変更など
-  --       -- cmdline_popup = {
-  --       --   enabled = true,
-  --       --   position = 'center', -- または 'center'
-  --       --   size = { width = 0.8, height = 0.8 },
-  --       -- },
-  --       hooks = {
-  --         -- 補完ポップアップが開いた時に、fine-cmdline の補完機能を有効にする
-  --         -- nvim-cmp との連携がスムーズに行われるためのフック
-  --         on_cmdline_enter = function()
-  --           vim.api.nvim_set_option_value("cmdheight", 0, { scope = "global" })
-  --         end,
-  --         on_cmdline_leave = function()
-  --           vim.api.nvim_set_option_value("cmdheight", 1, { scope = "global" })
-  --         end,
-  --       },
-  --     })
-  --   end,
-  -- },
 }
