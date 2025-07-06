@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
-{
 
-  let
+let
     toVarName = str: builtins.replaceStrings ["-"] ["_"] str;
   
     buildSubstArgs = pkgs: plugins: builtins.listToAttrs (builtins.map (p: {
@@ -14,9 +13,9 @@
     "nvim-cmp" "cmp-nvim-lsp" "cmp-buffer" "cmp-path" "cmp-cmdline" "lspkind-nvim" "copilot-lua" "luasnip" "cmp_luasnip" "friendly-snippets" "copilot-cmp" "lspkind-nvim" "cmp-latex-symbols"
     ];
   
-  in
+in
 
-  {
+{
   programs.neovim = {
     enable = true; # nvimパッケージもインストールされる
     extraPackages = with pkgs; [
@@ -32,5 +31,4 @@
     } // buildSubstArgs pkgs pluginNames);
     recursive = true;
   };
-  }
 }
