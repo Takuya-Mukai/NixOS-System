@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 
 let
@@ -36,7 +35,5 @@ in {
       nodePackages.nodejs
     ] ++ (map (p: pkgs.vimPlugins.${p}) pluginNames);
   };
-
   home.file = replacedLuaFiles;
 }
-
