@@ -8,7 +8,8 @@
   };
 
   # Use latest kernel.
-  hardware.cpu.amd.updateMicrocode = true;
+  hardware.enableAllFirmware = true;
+  hardware.cpu.intel.updateMicrocode = true;
   hardware.bluetooth.enable = true;
   networking.hostName = "thinkpad";
 

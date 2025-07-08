@@ -10,6 +10,7 @@
   # Use latest kernel.
   hardware.cpu.amd.updateMicrocode = true;
   hardware.bluetooth.enable = true;
+  hardware.enableAllFirmware = true;
   networking.hostName = "m75q";
 
   # setting for clipboard

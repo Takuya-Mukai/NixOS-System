@@ -8,6 +8,7 @@
   };
 
   # Use latest kernel.
+  hardware.enableAllFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
   hardware.bluetooth.enable = true;
   networking.hostName = "5500U";
