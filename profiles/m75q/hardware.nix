@@ -15,5 +15,5 @@
 
   # setting for clipboard
   services.spice-vdagentd.enable = true;
-  networking.interfaces.enp2s0f1.mtu = 1340;
+  networking.interfaces.enp2s0f1.mtu = 1280;
 }
