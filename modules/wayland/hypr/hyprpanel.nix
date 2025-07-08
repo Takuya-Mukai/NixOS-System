@@ -7,7 +7,7 @@
     power-profiles-daemon
     jq
     vulnix
-    pwvucontrol
+    pavucontrol
     brightnessctl
     btop
   ];
@@ -83,7 +83,7 @@
       bar.customModules.updates.icon.updated = "󰋼";
       bar.customModules.updates.icon.pending = "󰋼";
       bar.volume.rightClick = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
-      bar.volume.middleClick = "pwvucontrol";
+      bar.volume.middleClick = "pavucontrol";
       bar.media.format = "{title}";
     };
   };

@@ -7,7 +7,7 @@
     walker
     wlvncc
     nwg-displays
-    pwvucontrol
+    pavucontrol
     wayvnc
     libsForQt5.xwaylandvideobridge
     wf-recorder
