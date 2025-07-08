@@ -20,6 +20,7 @@
       ../../system/virtualisation.nix
       ../../system/keyboard.nix
       ../../system/steam.nix
+      ../../system/sound.nix
       inputs.nixos-hardware.nixosModules.common-cpu-amd
       inputs.nixos-hardware.nixosModules.common-pc-ssd
     ];
