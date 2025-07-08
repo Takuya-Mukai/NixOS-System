@@ -29,10 +29,14 @@
     };
     astal.url = "github:aylur/astal";
     ags.url = "github:aylur/ags";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, ... }@inputs:
     let
       # 1. 管理したいホスト名と、それぞれが使う設定ファイルのパスを定義
       hosts = {
