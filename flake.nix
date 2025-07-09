@@ -36,7 +36,7 @@
   };
 
 
-  outputs = { self, ... }@inputs:
+  outputs = { self, nixpkgs, nixvim, home-manager, ... }@inputs:
     let
       # 1. 管理したいホスト名と、それぞれが使う設定ファイルのパスを定義
       hosts = {
