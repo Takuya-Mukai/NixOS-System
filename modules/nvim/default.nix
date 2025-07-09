@@ -3,5 +3,5 @@ let
   nixvim-config = import ./nixvim-config.nix;
 in
 {
-  programs.nixvim = nixvim-config.settings;
+  inputs.programs.nixvim = nixvim-config.settings;
 }

@@ -51,11 +51,9 @@ in
       loaded_netrwPlugin = 1;
       helplang         = "ja,en";
     };
-    -- SignColumn（常に1列確保）
     localOpts = {
       signcolumn = "yes:1";
     };
-    -- 現在は Vim コマンドとして記述
     extraConfigVim = ''
       autocmd TermOpen * setlocal nonumber norelativenumber
     '';

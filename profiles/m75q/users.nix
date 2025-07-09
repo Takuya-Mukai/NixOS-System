@@ -1,5 +1,12 @@
 { config, pkgs, inputs, ... }:
 
+let
+  nixvim = import (builtins.fetchGit {
+    url = "https://github.com/nix-community/nixvim";
+    ref = "main";
+  });
+in
+
 {
   users.users.user = {
     isNormalUser = true;
@@ -27,7 +34,6 @@
         ../../modules/wayland/hypr/default.nix
         ../../modules/wayland/hypr/monitor/hyprland-monitor-m75q.nix
 	../../modules/rustdesk.nix
-     	../../modules/nvim/default.nix 
       ];
     };
   };
