@@ -36,7 +36,7 @@
   };
 
 
-  outputs = { self, ... }@inputs:
+  outputs = { self, nixpkgs, nixvim, home-manager, ... }@inputs:
     let
       # 1. 管理したいホスト名と、それぞれが使う設定ファイルのパスを定義
       hosts = {
@@ -47,11 +47,12 @@
       };
 
       # 2. nixosSystemを生成するための共通のロジックを関数として定義
-      mkSystem = configPath: nixpkgs.lib.nixosSystem {
+      mkSystem = configPath: inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           configPath  # <- 各ホスト固有の設定ファイル
           home-manager.nixosModules.home-manager # <- 共通のモジュール
+	  nixvim.nixosModules.nixvim
         ];
         specialArgs = { inherit inputs; }; # <- 共通の引数
       };
