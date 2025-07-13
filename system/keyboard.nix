@@ -1,24 +1,26 @@
 
-{ config, inputs, pkgs, ... }:
+{ inputs, ... }:
 
 {
-  imports =
-    [
-      inputs.xremap.nixosModules.default
-    ];
-
+  imports = [
+    inputs.xremap.nixosModules.default
+  ];
   services.xremap = {
-    userName = "user";
+    userName = "your-real-username";  # ← 本当のユーザー名に変更
     serviceMode = "system";
     config = {
       modmap = [
         {
-          name = "CapsLock to Esc";
-          remap = { CapsLock = "Esc"; };
-        }
-        {
-          name = "CapsLock to Ctrl";
-          remap = { CapsLock = "Ctrl_L"; };
+          name = "CapsLock dual Esc/Ctrl";
+          remap = {
+            CapsLock = {
+              # タップ時：Esc、ホールド時：Ctrl
+              dual = {
+                press = "Esc";
+                hold = "Ctrl_L";
+              };
+            };
+          };
         }
       ];
     };
