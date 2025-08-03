@@ -10,10 +10,12 @@
   # Use latest kernel.
   hardware.cpu.amd.updateMicrocode = true;
   hardware.bluetooth.enable = true;
-  hardware.enableAllFirmware = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   networking.hostName = "m75q";
 
   # setting for clipboard
   services.spice-vdagentd.enable = true;
-  networking.interfaces.enp2s0f1.mtu = 1280;
+  networking.interfaces.enp2s0f1.mtu = 1500;
+  networking.interfaces.enp2s0f1.wakeOnLan.enable = true;
 }

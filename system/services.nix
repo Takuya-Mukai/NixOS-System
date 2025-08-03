@@ -3,6 +3,13 @@
   services = {
     blueman.enable = true;
     tailscale.enable = true;
+    openssh = {
+      enable = true;
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+      };
+    };
   };
   networking = {
     firewall = {

@@ -67,7 +67,9 @@
     usbutils
     tree
     ripgrep
+    pulseaudio
     inputs.home-manager.packages.${pkgs.system}.default
+    ethtool
   ];
 
   # This value determines the NixOS release from which the default
