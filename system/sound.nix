@@ -19,4 +19,5 @@
       };
     };
   };
+  programs.noisetorch.enable = true;
 }

@@ -70,6 +70,7 @@
     pulseaudio
     inputs.home-manager.packages.${pkgs.system}.default
     ethtool
+    nfs-utils
   ];
 
   # This value determines the NixOS release from which the default
