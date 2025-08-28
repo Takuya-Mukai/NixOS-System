@@ -14,6 +14,10 @@
 
   networking.hostName = "m75q";
 
+  hardware.opentabletdriver = {
+    enable = true;
+  };
+
   # setting for clipboard
   services.spice-vdagentd.enable = true;
   networking.interfaces.enp2s0f1.mtu = 1500;

@@ -1,4 +1,3 @@
-
 { inputs, ... }:
 
 {
@@ -6,8 +5,8 @@
     inputs.xremap.nixosModules.default
   ];
   services.xremap = {
-    userName = "your-real-username";  # ← 本当のユーザー名に変更
-    serviceMode = "system";
+    userName = "user";
+    serviceMode = "user";
     config = {
       modmap = [
         {
