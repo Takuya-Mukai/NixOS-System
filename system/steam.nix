@@ -5,7 +5,7 @@
     enable = true;
     fontPackages = with pkgs; [
       ibm-plex
-      moralerspace-hwnf
+      moralerspace
     ];
     extraCompatPackages = with pkgs; [
       proton-ge-bin

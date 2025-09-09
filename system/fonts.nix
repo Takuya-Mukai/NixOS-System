@@ -3,7 +3,7 @@
   fonts = {
     packages = with pkgs; [
       ibm-plex
-      moralerspace-hwnf
+      moralerspace
       nerd-fonts.fira-code
     ];
     fontDir.enable = true;
@@ -11,7 +11,6 @@
       defaultFonts = {
         serif = ["IBM Plex Serif"];
         sansSerif = ["IBM Plex Sans JP"];
-        monospace = ["Moralerspace Argon HWNF"];
         emoji = ["Noto Color Emoji"];
       };
     };
