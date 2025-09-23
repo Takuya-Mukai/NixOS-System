@@ -5,6 +5,8 @@
       ibm-plex
       moralerspace
       nerd-fonts.fira-code
+      noto-fonts
+      noto-fonts-color-emoji
     ];
     fontDir.enable = true;
     fontconfig = {
