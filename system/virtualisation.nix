@@ -1,12 +1,14 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   virtualisation = {
     docker.enable = true;
     libvirtd = {
       enable = true;
-      qemu = {
-	ovmf.enable = true;
-      };
       allowedBridges = [ "virbr0" ];
     };
   };
