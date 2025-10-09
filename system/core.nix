@@ -1,8 +1,16 @@
-{ config, pkgs, inputs, ...}:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
     gc = {
       automatic = true;
@@ -32,7 +40,7 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
 
-  services.desktopManager.gnome.enable = true;
+  # services.desktopManager.gnome.enable = true;
   security.polkit.enable = true;
 
   xdg.portal = {
@@ -48,13 +56,13 @@
         default = "wlr";
       };
       gnome = {
-        default = ["gtk"];
+        default = [ "gtk" ];
       };
       kde = {
-        default = ["kde"];
+        default = [ "kde" ];
       };
       hyprland = {
-        default = ["hyprland"];
+        default = [ "hyprland" ];
       };
     };
   };
