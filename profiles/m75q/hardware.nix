@@ -1,8 +1,17 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "iommu=pt"
+      "video=efifb:off"
+    ];
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
   };
