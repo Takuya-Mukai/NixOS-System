@@ -10,6 +10,17 @@
     libvirtd = {
       enable = true;
       allowedBridges = [ "virbr0" ];
+
+      # for OSX
+      extraConfig = ''
+        security_driver = "none"
+        unix_sock_group = "libvirt"
+        unix_sock_rw_perms = "0770"
+      '';
+
+      qemu.swtpm = {
+        enable = true;
+      };
     };
   };
   programs.virt-manager.enable = true;
@@ -17,4 +28,20 @@
     options kvm_amd nested=1
     options kvm ignore_msrs=1 report_ignored_msrs=0
   '';
+  # packages for MacOS
+  environment.systemPackages = with pkgs; [
+    dnsmasq
+    vde2
+    dosfstools
+    bridge-utils
+    # ネットワーキング/ファイアウォール
+    nftables
+    ebtables
+    iptables-nft
+
+    # Python関連
+    python3Packages.tk # 'tk' GUI toolkit
+    python3Packages.tqdm # 'python-tqdm' に相当
+    python3Packages.click # 'python-click' に相当
+  ];
 }

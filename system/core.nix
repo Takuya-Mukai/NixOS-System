@@ -75,6 +75,8 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   environment.systemPackages = with pkgs; [
+    coreutils
+    ncurses
     polkit_gnome
     usbutils
     tree
