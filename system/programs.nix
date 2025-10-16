@@ -3,6 +3,10 @@
 
 {
   programs = {
+    wireshark = {
+      enable = true;
+      dumpcap.enable = true;
+    };
     zsh.enable = true;
     git.enable = true;
     neovim = {

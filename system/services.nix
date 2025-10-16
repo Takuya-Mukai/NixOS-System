@@ -19,8 +19,14 @@
         "tailscale0"
         "virbr0"
       ];
-      allowedUDPPorts = [ config.services.tailscale.port ];
-      allowedTCPPorts = [ 22 ];
+      allowedUDPPorts = [
+        config.services.tailscale.port
+        7777
+      ];
+      allowedTCPPorts = [
+        22
+        7777
+      ];
       # option for tailscale exitnode
       checkReversePath = "loose";
       # port for kde connect

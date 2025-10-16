@@ -12,11 +12,11 @@
       allowedBridges = [ "virbr0" ];
 
       # for OSX
-      extraConfig = ''
-        security_driver = "none"
-        unix_sock_group = "libvirt"
-        unix_sock_rw_perms = "0770"
-      '';
+      # extraConfig = ''
+      #   security_driver = "none"
+      #   unix_sock_group = "libvirt"
+      #   unix_sock_rw_perms = "0770"
+      # '';
 
       qemu.swtpm = {
         enable = true;
@@ -36,12 +36,7 @@
     bridge-utils
     # ネットワーキング/ファイアウォール
     nftables
+    iptables
     ebtables
-    iptables-nft
-
-    # Python関連
-    python3Packages.tk # 'tk' GUI toolkit
-    python3Packages.tqdm # 'python-tqdm' に相当
-    python3Packages.click # 'python-click' に相当
   ];
 }
