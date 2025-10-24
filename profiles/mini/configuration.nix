@@ -23,7 +23,6 @@
     ../../system/locale.nix
     ../../system/services.nix
     ../../system/virtualisation-amd.nix
-    ../../system/keyboard.nix
     ../../system/steam.nix
     ../../system/sound.nix
     inputs.nixos-hardware.nixosModules.common-cpu-amd

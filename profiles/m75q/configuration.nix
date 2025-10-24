@@ -23,7 +23,6 @@
     ../../system/locale.nix
     ../../system/services.nix
     ../../system/virtualisation-amd.nix
-    ../../system/keyboard.nix
     ../../system/steam.nix
     ../../system/sound.nix
     ../../system/r8169.nix

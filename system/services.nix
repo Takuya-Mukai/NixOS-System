@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 {
   services = {
+    udiskie = {
+      enable = true;
+      automount = true;
+      notify = true;
+    };
     flatpak.enable = true;
     blueman.enable = true;
     tailscale.enable = true;

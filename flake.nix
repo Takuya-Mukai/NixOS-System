@@ -9,11 +9,15 @@
     };
     # driver for hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    xremap.url = "github:xremap/nix-flake";
   };
 
-
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
       # 1. 管理したいホスト名と、それぞれが使う設定ファイルのパスを定義
       hosts = {
@@ -24,11 +28,13 @@
       };
 
       # 2. nixosSystemを生成するための共通のロジックを関数として定義
-      mkSystem = configPath: inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [ configPath ];
-        specialArgs = { inherit inputs; }; # <- 共通の引数
-      };
+      mkSystem =
+        configPath:
+        inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ configPath ];
+          specialArgs = { inherit inputs; }; # <- 共通の引数
+        };
 
     in
     {
