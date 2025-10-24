@@ -25,6 +25,8 @@
       ];
       allowedTCPPorts = [
         22
+        # for ollama
+        11434
         7777
       ];
       # option for tailscale exitnode

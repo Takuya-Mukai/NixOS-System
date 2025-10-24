@@ -36,9 +36,18 @@
     capSysAdmin = true;
     openFirewall = true;
   };
+
   networking.firewall = {
     enable = true;
+    allowedUDPPorts = [
+      5900
+      5901
+      5902
+    ];
     allowedTCPPorts = [
+      5900
+      5901
+      5902
       47984
       47989
       47990
